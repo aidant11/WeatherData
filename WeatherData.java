@@ -28,22 +28,21 @@ public class WeatherData
         return temperatures.toString();
     }
 
-    /**
-    * Returns the length of the longest heat wave found in temperatures, as described in
-    * part (b)
-    * Precondition: There is at least one heat wave in temperatures based on threshold.
-    */
     public int longestHeatWave(double threshold)
     { 
         int heatWave = 0;
         int max = 0;
-        for (double t: temperatures)
+        for (double t : temperatures)
         {
             if (t>threshold) 
             {
                 heatWave++;
             }
+            else heatWave=0;
+            if (heatWave > max) max = heatWave;
+            
         }
+        return max;
     }
     
     // There may be instance variables, constructors, and methods that are not shown.
